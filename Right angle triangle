@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int rows;
+
+    // Prompt the user to enter the number of rows
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+
+    // Outer loop for rows
+    for (int i = 0; i < rows; i++) {
+        // Inner loop for columns
+        for (int j = 0; j <= i; j++) {
+            // Condition to check whether to print asterisks (*) or spaces
+            // For the outer border and the right side of the triangle, print asterisks
+            // For the left side of the triangle and the inner area, print spaces or asterisks accordingly
+            if (j == 0 || i == rows - 1 || j == i || (i > 0 && j < i))
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
